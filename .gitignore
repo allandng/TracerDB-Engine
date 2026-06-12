@@ -1,0 +1,6 @@
+build/
+data/
+*.vec
+*.tdb
+*.tmp
+.DS_Store
