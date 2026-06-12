@@ -16,6 +16,7 @@
 //            tiny cache work for vector search.
 #pragma once
 
+#include <algorithm>
 #include <cstdint>
 #include <functional>
 #include <list>
