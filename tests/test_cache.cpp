@@ -19,7 +19,7 @@ static void check_pattern(const std::byte* page, uint64_t pg) {
 }
 
 static void run_for_policy(const std::string& pol) {
-  const std::string path = "/tmp/tracerdb_test_cache_" + pol + ".bin";
+  const std::string path = "tracerdb_test_cache_" + pol + ".bin";
   std::remove(path.c_str());
   const uint64_t npages = 64;
   const size_t nframes = 4;  // tiny cache => constant eviction

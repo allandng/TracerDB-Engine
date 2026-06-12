@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    name: test (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: make -j4
+      - name: Run tests
+        run: make test
+      - name: Smoke test (build + search a small index)
+        run: |
+          mkdir -p data
+          ./build/tracer_gen data/ci.vec --n 20000 --dim 64 --clusters 64
+          ./build/tracer_build data/ci.vec data/ci.tdb --nlist 64 --cache-mb 4
+          ./build/tracer_query data/ci.tdb --raw data/ci.vec --row 7 --k 5 --nprobe 8 --cache-mb 2

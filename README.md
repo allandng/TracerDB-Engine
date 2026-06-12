@@ -1,10 +1,17 @@
 # TracerDB
 
+[![CI](https://github.com/allandng/TracerDB-Engine/actions/workflows/ci.yml/badge.svg)](https://github.com/allandng/TracerDB-Engine/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![C++17](https://img.shields.io/badge/C%2B%2B-17-orange.svg)
+![No dependencies](https://img.shields.io/badge/dependencies-none-brightgreen.svg)
+
 A disk-backed vector search engine for edge devices, written from scratch in
 C++17. TracerDB performs semantic (nearest-neighbor) search over embedding
 datasets far larger than RAM by bypassing the operating system's page cache
 entirely and managing every cached byte itself, with a user-space page cache
 and an LRU-K replacement policy tuned for vector-index access patterns.
+
+![TracerDB demo: 500k vectors searched through a 2 MiB page cache](assets/demo.gif)
 
 On a 280 MiB index of 500,000 × 128-dim embeddings, searched through a
 **2 MiB** page cache (peak process RSS ≈ 5 MiB):

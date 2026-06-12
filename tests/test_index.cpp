@@ -16,8 +16,8 @@
 using namespace tracerdb;
 
 int main() {
-  const char* raw_path = "/tmp/tracerdb_test_index.vec";
-  const char* idx_path = "/tmp/tracerdb_test_index.tdb";
+  const char* raw_path = "tracerdb_test_index.vec";
+  const char* idx_path = "tracerdb_test_index.tdb";
   std::remove(raw_path);
   std::remove(idx_path);
 

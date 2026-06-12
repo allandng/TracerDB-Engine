@@ -3,4 +3,5 @@ data/
 *.vec
 *.tdb
 *.tmp
+*.bin
 .DS_Store

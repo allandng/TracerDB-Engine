@@ -13,7 +13,7 @@ using namespace tracerdb;
 // pages each round (like posting lists — each page touched once and never
 // again). Returns hits on the hot pages after warmup.
 static uint64_t hot_page_hits(const std::string& pol) {
-  const std::string path = "/tmp/tracerdb_test_policy_" + pol + ".bin";
+  const std::string path = "tracerdb_test_policy_" + pol + ".bin";
   std::remove(path.c_str());
   const uint64_t hot[] = {0, 1};
   const uint64_t ncold = 64;  // per round, all distinct

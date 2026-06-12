@@ -8,7 +8,7 @@
 using namespace tracerdb;
 
 int main() {
-  const char* path = "/tmp/tracerdb_test_pager.bin";
+  const char* path = "tracerdb_test_pager.bin";
   std::remove(path);
   {
     Pager p(path, true);
